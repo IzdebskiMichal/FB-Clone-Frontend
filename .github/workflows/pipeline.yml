@@ -7,6 +7,10 @@ env:
   AZURE_WEBAPP_PACKAGE_PATH: "."
   NODE_VERSION: "18.x"
 
+defaults:
+  run:
+    working-directory: fb-clone-frontend
+
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
@@ -35,6 +39,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: "npm"
+          cache-dependency-path: fb-clone-frontend/package-lock.json
 
       # Runs a single command using the runners shell
       - name: npm install, build, and test
@@ -51,11 +56,17 @@ jobs:
           npm install
           npm run build --if-present
           npm run test --if-present
+
+      # Zips the artifact for deployment
+      - name: Zip artifact for deployment
+        run: zip release.zip ./* -r
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
-          name: fb-clone
-          path: .
+          name: fb-clone-frontend
+
+          path: fb-clone-frontend/release.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -68,11 +79,14 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v3
         with:
-          name: fb-clone
+          name: fb-clone-frontend
+
+      - name: Unzip artifact for deployment
+        run: unzip release.zip
 
       - name: "Deploy to Azure WebApp"
         id: deploy-to-webapp
-        uses: azure/webapps-deploy@85270a1854658d167ab239bce43949edb336fa7c
+        uses: azure/webapps-deploy@v2
         with:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
