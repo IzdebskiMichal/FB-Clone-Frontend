@@ -81,7 +81,7 @@ jobs:
           name: fb-clone-frontend
 
       - name: Unzip artifact for deployment
-        run: unzip release.zip
+        run: unzip fb-clone-frontend/release.zip
 
       - name: "Deploy to Azure WebApp"
         id: deploy-to-webapp
