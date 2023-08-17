@@ -35,6 +35,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: "npm"
+          cache-dependency-path: fb-clone-frontend/package-lock.json
 
       # Runs a single command using the runners shell
       - name: npm install, build, and test
