@@ -58,7 +58,10 @@ jobs:
 
       # Zips the artifact for deployment
       - name: Zip artifact for deployment
-        run: zip release.zip build/* -r
+        run: |
+          cd ${{ env.AZURE_WEBAPP_PACKAGE_PATH}}/build
+          zip -r ../release.zip *
+        working-directory: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
