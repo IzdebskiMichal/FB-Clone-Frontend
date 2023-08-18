@@ -7,7 +7,7 @@ function MyButton() {
 export default function TestButton(){
     return (
         <div>
-            <h1>Welcome to my app</h1>
+            <h1>Welcome to my app 2</h1>
             <MyButton />
         </div>
     );
