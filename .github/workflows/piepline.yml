@@ -55,14 +55,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Unzip artifact for deployment
-        run: unzip build.zip
-
       - name: Download build artifacts
         uses: actions/download-artifact@v2
         with:
           name: www
           path: build.zip
+
+      - name: Unzip artifact for deployment
+        run: unzip build.zip
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
