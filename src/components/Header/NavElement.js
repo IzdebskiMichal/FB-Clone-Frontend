@@ -66,3 +66,7 @@ export const Menu = styled.div`
 export const FbLogo = styled.img`
   padding: 8px 10px 7px 16px;
 `;
+
+export const SearchDiv = styled.div`
+  width: 80%;
+`;

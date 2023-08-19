@@ -8,6 +8,7 @@ import {
   FbLogo,
 } from "./NavElement";
 import logo from "../../images/fb-logo.png";
+import SearchBar from "../../pages/searchBar";
 
 const Header = () => {
   return (
@@ -16,7 +17,7 @@ const Header = () => {
         <Menu>
           <FbLogo src={logo} alt="fb logo" />
           {/* search bar here */}
-          Left
+          <SearchBar />
         </Menu>
         <Menu>
           <MenuLink to="/home" activeStyle>
