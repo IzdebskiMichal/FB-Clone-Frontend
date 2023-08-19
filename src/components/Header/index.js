@@ -1,11 +1,13 @@
 import React from 'react'
-import { PrimaryNav, MenuLink, Menu, Hamburger } from './NavElement'
+import { PrimaryNav, MenuLink, Menu, Hamburger, MiddleNav, Div } from './NavElement'
 
-const Navbar = () => {
+const Header = () => {
   return (
     <>
       <PrimaryNav>
-        <Hamburger />
+        <Menu>
+          Left
+        </Menu>
         <Menu>
           <MenuLink to="/home" activeStyle>
             Home
@@ -20,8 +22,14 @@ const Navbar = () => {
             Games
           </MenuLink>
         </Menu>
+        <Menu>
+          Test 2
+        </Menu>
       </PrimaryNav>
+      <Menu>
+            Test
+          </Menu>
     </>
   )
 }
-export default Navbar
+export default Header
