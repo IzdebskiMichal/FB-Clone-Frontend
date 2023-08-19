@@ -1,14 +1,20 @@
-import React from 'react'
-import { PrimaryNav, MenuLink, Menu, Hamburger, MiddleNav, FbLogo } from './NavElement'
-import logo  from '../../images/fb-logo.png'
-
+import React from "react";
+import {
+  PrimaryNav,
+  MenuLink,
+  Menu,
+  Hamburger,
+  MiddleNav,
+  FbLogo,
+} from "./NavElement";
+import logo from "../../images/fb-logo.png";
 
 const Header = () => {
   return (
     <>
       <PrimaryNav>
         <Menu>
-          <FbLogo src={logo} alt='fb logo'/>
+          <FbLogo src={logo} alt="fb logo" />
           {/* search bar here */}
           Left
         </Menu>
@@ -26,14 +32,10 @@ const Header = () => {
             Games
           </MenuLink>
         </Menu>
-        <Menu>
-          Test 2
-        </Menu>
+        <Menu>Test 2</Menu>
       </PrimaryNav>
-      <Menu>
-            Test
-          </Menu>
+      <Menu>Test</Menu>
     </>
-  )
-}
-export default Header
+  );
+};
+export default Header;
