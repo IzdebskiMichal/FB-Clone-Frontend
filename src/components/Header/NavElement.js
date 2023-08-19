@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { NavLink as Link } from 'react-router-dom'
 
 export const PrimaryNav = styled.nav`
-  height: 50px;
+  height: 55px;
   display: flex;
   background: #1c1e21;
   justify-content: space-between;
@@ -62,4 +62,6 @@ export const Menu = styled.div`
   self-align: center
 `
 
-export const Logo = styled.cl
+export const FbLogo = styled.img`
+  padding: 8px 10px 7px 16px
+`

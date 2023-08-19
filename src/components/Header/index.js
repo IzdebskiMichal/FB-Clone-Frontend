@@ -1,11 +1,13 @@
 import React from 'react'
-import { PrimaryNav, MenuLink, Menu, Hamburger, MiddleNav, Div } from './NavElement'
+import { PrimaryNav, MenuLink, Menu, Hamburger, MiddleNav, FbLogo } from './NavElement'
+import logo  from '../../images/fb-logo.png'
 
 const Header = () => {
   return (
     <>
       <PrimaryNav>
         <Menu>
+          <FbLogo src={logo} alt='fb logo'/>
           Left
         </Menu>
         <Menu>
