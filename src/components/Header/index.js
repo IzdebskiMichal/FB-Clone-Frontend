@@ -2,12 +2,14 @@ import React from 'react'
 import { PrimaryNav, MenuLink, Menu, Hamburger, MiddleNav, FbLogo } from './NavElement'
 import logo  from '../../images/fb-logo.png'
 
+
 const Header = () => {
   return (
     <>
       <PrimaryNav>
         <Menu>
           <FbLogo src={logo} alt='fb logo'/>
+          {/* search bar here */}
           Left
         </Menu>
         <Menu>
