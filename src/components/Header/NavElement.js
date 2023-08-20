@@ -1,10 +1,10 @@
-import { FaBars } from "react-icons/fa";
 import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
 import { Home } from "@styled-icons/ionicons-outline/Home";
 import { Youtube } from "@styled-icons/remix-line/Youtube";
 import { Groups } from "@styled-icons/material-outlined/Groups";
 import { Games } from "@styled-icons/fluentui-system-regular/Games";
+import { SearchAlt2 } from "@styled-icons/boxicons-regular/SearchAlt2";
 
 export const PrimaryNav = styled.nav`
   height: 55px;
@@ -47,7 +47,12 @@ export const FbLogo = styled.img`
 `;
 
 export const SearchDiv = styled.div`
+  background-color: grey;
   width: 80%;
+  border-radius: 5px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-left: 5px;
 `;
 
 export const HomeIcon = styled(Home)`
@@ -70,7 +75,7 @@ export const GamesIcon = styled(Games)`
   height: 70%;
 `;
 
-// export const MediaIcon = styled(Media)`
-//   width: 100%;
-//   height: 50%;
-// `;
+export const SearchIcon = styled(SearchAlt2)`
+  width: 100%;
+  height: 70%;
+`;

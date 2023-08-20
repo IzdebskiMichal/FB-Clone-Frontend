@@ -8,7 +8,7 @@ const SearchBar = (props) => {
       <TextField
         id="outlined-basic"
         onChange={props.inputHandler}
-        variant="outlined"
+        variant="standard"
         fullWidth
         label="Search"
       />
