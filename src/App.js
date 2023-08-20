@@ -1,28 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-import './Button.js';
-import TestButton from './Button.js';
+import { React, useState } from "react";
+import "./App.css";
+import NavBar from "./components/Header/Navbar";
+import List from "./components/List";
 
 function App() {
+  const [inputText, setInputText] = useState("");
+  let inputHandler = (e) => {
+    //convert input text to lower case
+    var lowerCase = e.target.value.toLowerCase();
+    setInputText(lowerCase);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <TestButton />
-      </header>
-    </div>
+    <>
+      <NavBar inputHandler={inputHandler} />
+      <List input={inputText} />
+    </>
   );
 }
-
 export default App;
