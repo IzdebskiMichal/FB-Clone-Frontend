@@ -6,10 +6,10 @@ import Groups from "../../pages/groups";
 import Header from "./index.js";
 import { Routes, Route } from "react-router-dom";
 
-const NavBar = () => {
+const NavBar = (props) => {
   return (
     <>
-      <Header />
+      <Header inputHandler={props.inputHandler} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/games" element={<Games />} />

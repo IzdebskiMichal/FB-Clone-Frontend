@@ -1,18 +1,17 @@
-import { React, useState } from "react";
+import React from "react";
 import { TextField } from "@mui/material";
-import List from "../components/List";
 import { SearchDiv } from "../components/Header/NavElement";
 
-const SearchBar = () => {
+const SearchBar = (props) => {
   return (
     <SearchDiv>
       <TextField
         id="outlined-basic"
+        onChange={props.inputHandler}
         variant="outlined"
         fullWidth
         label="Search"
       />
-      <List />
     </SearchDiv>
   );
 };

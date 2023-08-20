@@ -1,23 +1,16 @@
 import React from "react";
-import {
-  PrimaryNav,
-  MenuLink,
-  Menu,
-  Hamburger,
-  MiddleNav,
-  FbLogo,
-} from "./NavElement";
+import { PrimaryNav, MenuLink, Menu, FbLogo } from "./NavElement";
 import logo from "../../images/fb-logo.png";
 import SearchBar from "../../pages/searchBar";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <>
       <PrimaryNav>
         <Menu>
           <FbLogo src={logo} alt="fb logo" />
           {/* search bar here */}
-          <SearchBar />
+          <SearchBar inputHandler={props.inputHandler} />
         </Menu>
         <Menu>
           <MenuLink to="/home" activeStyle>
