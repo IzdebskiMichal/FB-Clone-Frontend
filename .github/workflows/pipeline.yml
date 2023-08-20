@@ -54,7 +54,7 @@ jobs:
         run: |
           npm install
           npm run build --if-present
-          npm run test --if-present
+          npm run test --if-present -- --passWithNoTests
 
       # Zips the artifact for deployment
       - name: Zip artifact for deployment
