@@ -1,35 +1,15 @@
 import { FaBars } from "react-icons/fa";
 import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
+import { Home } from "@styled-icons/ionicons-outline/Home";
 
 export const PrimaryNav = styled.nav`
   height: 55px;
   display: flex;
-  background: #1c1e21;
+  // background: #1c1e21;
+  background: green;
   justify-content: space-between;
 `;
-
-// export const LeftNav = styled.nav`
-//   z-index: 14;
-//   height: 50px;
-//   display: flex;
-//   background: #1c1e21;
-//   justify-content: space-between;
-//   padding: 0.18rem calc((100vw - 1000px) / 2);
-// `
-
-// export const MiddleNav = styled.div`
-//   justify-content: space-between;
-// `
-
-// export const RightNav = styled.nav`
-//   z-index: 14;
-//   height: 50px;
-//   display: flex;
-//   background: #1c1e21;
-//   justify-content: space-between;
-//   padding: 0.18rem calc((100vw - 1000px) / 2);
-// `
 
 export const MenuLink = styled(Link)`
   color: #fff;
@@ -43,18 +23,11 @@ export const MenuLink = styled(Link)`
     color: #000000;
   }
 `;
-export const Hamburger = styled(FaBars)`
-  display: none;
-  color: #ffffff;
-  @media screen and (max-width: 768px) {
-    display: block;
-    font-size: 1.9rem;
-    top: 0;
-    right: 0;
-    position: absolute;
-    cursor: pointer;
-    transform: translate(-100%, 75%);
-  }
+
+export const MenuLeft = styled.div`
+  display: flex;
+  justify-content: center;
+  self-align: center;
 `;
 
 export const Menu = styled.div`
@@ -69,4 +42,9 @@ export const FbLogo = styled.img`
 
 export const SearchDiv = styled.div`
   width: 80%;
+`;
+
+export const HomeIcon = styled(Home)`
+  width: 100%;
+  height: 100%;
 `;

@@ -1,5 +1,12 @@
 import React from "react";
-import { PrimaryNav, MenuLink, Menu, FbLogo } from "./NavElement";
+import {
+  PrimaryNav,
+  MenuLink,
+  Menu,
+  MenuLeft,
+  FbLogo,
+  HomeIcon,
+} from "./NavElement";
 import logo from "../../images/fb-logo.png";
 import SearchBar from "../../pages/searchBar";
 
@@ -7,14 +14,14 @@ const Header = (props) => {
   return (
     <>
       <PrimaryNav>
-        <Menu>
+        <MenuLeft>
           <FbLogo src={logo} alt="fb logo" />
           {/* search bar here */}
           <SearchBar inputHandler={props.inputHandler} />
-        </Menu>
+        </MenuLeft>
         <Menu>
           <MenuLink to="/home" activeStyle>
-            Home
+            <HomeIcon />
           </MenuLink>
           <MenuLink to="/media" activeStyle>
             Media
@@ -28,7 +35,7 @@ const Header = (props) => {
         </Menu>
         <Menu>Test 2</Menu>
       </PrimaryNav>
-      <Menu>Test</Menu>
+      <MenuLink></MenuLink>
     </>
   );
 };
