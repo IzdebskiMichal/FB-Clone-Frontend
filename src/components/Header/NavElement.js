@@ -2,6 +2,9 @@ import { FaBars } from "react-icons/fa";
 import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
 import { Home } from "@styled-icons/ionicons-outline/Home";
+import { Youtube } from "@styled-icons/remix-line/Youtube";
+import { Groups } from "@styled-icons/material-outlined/Groups";
+import { Games } from "@styled-icons/fluentui-system-regular/Games";
 
 export const PrimaryNav = styled.nav`
   height: 55px;
@@ -11,7 +14,7 @@ export const PrimaryNav = styled.nav`
 `;
 
 export const MenuLink = styled(Link)`
-  color: #fff;
+  color: #65676b;
   display: flex;
   cursor: pointer;
   align-items: center;
@@ -49,8 +52,25 @@ export const SearchDiv = styled.div`
 
 export const HomeIcon = styled(Home)`
   width: 100%;
-  height: 100%;
-  color: #111111 &.active {
-    color: #111111;
-  }
+  height: 50%;
 `;
+
+export const MediaIcon = styled(Youtube)`
+  width: 100%;
+  height: 60%;
+`;
+
+export const GroupsIcon = styled(Groups)`
+  width: 100%;
+  height: 70%;
+`;
+
+export const GamesIcon = styled(Games)`
+  width: 100%;
+  height: 70%;
+`;
+
+// export const MediaIcon = styled(Media)`
+//   width: 100%;
+//   height: 50%;
+// `;
