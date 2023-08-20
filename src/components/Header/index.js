@@ -6,6 +6,7 @@ import {
   MenuLeft,
   FbLogo,
   HomeIcon,
+  LogoLink,
 } from "./NavElement";
 import logo from "../../images/fb-logo.png";
 import SearchBar from "../../pages/searchBar";
@@ -15,7 +16,9 @@ const Header = (props) => {
     <>
       <PrimaryNav>
         <MenuLeft>
-          <FbLogo src={logo} alt="fb logo" />
+          <LogoLink to="/home">
+            <FbLogo src={logo} alt="fb logo" />
+          </LogoLink>
           {/* search bar here */}
           <SearchBar inputHandler={props.inputHandler} />
         </MenuLeft>

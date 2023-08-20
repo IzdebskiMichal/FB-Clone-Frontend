@@ -6,8 +6,7 @@ import { Home } from "@styled-icons/ionicons-outline/Home";
 export const PrimaryNav = styled.nav`
   height: 55px;
   display: flex;
-  // background: #1c1e21;
-  background: green;
+  background: #1c1e21;
   justify-content: space-between;
 `;
 
@@ -20,8 +19,12 @@ export const MenuLink = styled(Link)`
   padding: 0 1.2rem;
   height: 100%;
   &.active {
-    color: #000000;
+    color: #4599ff;
   }
+`;
+
+export const LogoLink = styled(Link)`
+  display: flex;
 `;
 
 export const MenuLeft = styled.div`
@@ -47,4 +50,7 @@ export const SearchDiv = styled.div`
 export const HomeIcon = styled(Home)`
   width: 100%;
   height: 100%;
+  color: #111111 &.active {
+    color: #111111;
+  }
 `;
