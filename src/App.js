@@ -12,8 +12,7 @@ function App() {
   };
   return (
     <>
-      <NavBar inputHandler={inputHandler} />
-      <List input={inputText} />
+      <NavBar inputHandler={inputHandler} input={inputText} />
     </>
   );
 }

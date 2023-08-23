@@ -5,13 +5,16 @@ import {
   MiddlePanel,
   RightPanel,
 } from "../components/Home/HomeElement";
+import List from "../components/List";
 
-function Home() {
+function Home(props) {
   return (
     <>
       <HomePage>
         <LeftPanel>left</LeftPanel>
-        <MiddlePanel>mid</MiddlePanel>
+        <MiddlePanel>
+          <List input={props.input} />
+        </MiddlePanel>
         <RightPanel>right</RightPanel>
       </HomePage>
     </>

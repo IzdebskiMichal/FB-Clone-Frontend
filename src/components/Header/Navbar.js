@@ -11,7 +11,7 @@ const NavBar = (props) => {
     <>
       <Header inputHandler={props.inputHandler} />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home input={props.input} />} />
         <Route path="/games" element={<Games />} />
         <Route path="/media" element={<Media />} />
         <Route path="/groups" element={<Groups />} />

@@ -22,7 +22,6 @@ const Header = (props) => {
           <LogoLink to="/">
             <FbLogo src={logo} alt="fb logo" />
           </LogoLink>
-          {/* search bar here */}
           <SearchBar inputHandler={props.inputHandler} />
         </MenuLeft>
         <Menu>

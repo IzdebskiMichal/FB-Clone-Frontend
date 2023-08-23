@@ -10,6 +10,7 @@ export const LeftPanel = styled.div`
   padding-top: 10px;
   width: 25%;
   background: red;
+  height: 100vh;
 `;
 
 export const MiddlePanel = styled.div`
