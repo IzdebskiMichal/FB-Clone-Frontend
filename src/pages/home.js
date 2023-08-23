@@ -1,7 +1,20 @@
 import React from "react";
-import { HomePage } from "../components/Home/HomeElement";
+import {
+  HomePage,
+  LeftPanel,
+  MiddlePanel,
+  RightPanel,
+} from "../components/Home/HomeElement";
 
-const Home = () => {
-  return <HomePage>Home</HomePage>;
-};
+function Home() {
+  return (
+    <>
+      <HomePage>
+        <LeftPanel>left</LeftPanel>
+        <MiddlePanel>mid</MiddlePanel>
+        <RightPanel>right</RightPanel>
+      </HomePage>
+    </>
+  );
+}
 export default Home;
