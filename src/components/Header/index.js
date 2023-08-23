@@ -19,14 +19,13 @@ const Header = (props) => {
     <>
       <PrimaryNav>
         <MenuLeft>
-          <LogoLink to="/home">
+          <LogoLink to="/">
             <FbLogo src={logo} alt="fb logo" />
           </LogoLink>
-          {/* search bar here */}
           <SearchBar inputHandler={props.inputHandler} />
         </MenuLeft>
         <Menu>
-          <MenuLink to="/home" activeStyle>
+          <MenuLink to="/" activeStyle>
             <HomeIcon />
           </MenuLink>
           <MenuLink to="/media" activeStyle>

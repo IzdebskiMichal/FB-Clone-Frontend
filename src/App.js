@@ -1,7 +1,12 @@
 import { React, useState } from "react";
 import "./App.css";
+import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 import NavBar from "./components/Header/Navbar";
-import List from "./components/List";
+import Home from "./pages/home";
+import Games from "./pages/games";
+import Media from "./pages/media";
+import Groups from "./pages/groups";
+import Friends from "./pages/friends";
 
 function App() {
   const [inputText, setInputText] = useState("");
@@ -11,10 +16,16 @@ function App() {
     setInputText(lowerCase);
   };
   return (
-    <>
+    <Router>
       <NavBar inputHandler={inputHandler} />
-      <List input={inputText} />
-    </>
+      <Routes>
+        <Route path="/" element={<Home input={inputText} />} />
+        <Route path="/games" element={<Games />} />
+        <Route path="/media" element={<Media />} />
+        <Route path="/groups" element={<Groups />} />
+        <Route path="/friends" element={<Friends />} />
+      </Routes>
+    </Router>
   );
 }
 export default App;
