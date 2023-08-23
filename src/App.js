@@ -6,6 +6,7 @@ import Home from "./pages/home";
 import Games from "./pages/games";
 import Media from "./pages/media";
 import Groups from "./pages/groups";
+import Friends from "./pages/friends";
 
 function App() {
   const [inputText, setInputText] = useState("");
@@ -22,6 +23,7 @@ function App() {
         <Route path="/games" element={<Games />} />
         <Route path="/media" element={<Media />} />
         <Route path="/groups" element={<Groups />} />
+        <Route path="/friends" element={<Friends />} />
       </Routes>
     </Router>
   );
