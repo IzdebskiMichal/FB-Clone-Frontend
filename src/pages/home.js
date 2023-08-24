@@ -88,9 +88,6 @@ function Home(props) {
                 </LeftPanelDiv>
               </Button>
             </li>
-
-            {/* {console.log(isOpen)}
-            {<HiddenElement /> && isOpen} */}
           </Ul>
         </LeftPanel>
         <MiddlePanel>
