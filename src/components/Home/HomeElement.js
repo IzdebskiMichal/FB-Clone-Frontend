@@ -54,3 +54,18 @@ export const ProfilePic = styled.img`
   padding-right: 10px;
   width: 10%;
 `;
+
+export const Button = styled.button`
+  display: flex;
+  align-items: center;
+  padding: 10px 0px 5px 10px;
+  margin-left: 10px;
+  background: none;
+  cursor: pointer;
+  width: 70%;
+  background-color: inherit;
+  border: none;
+  &:hover {
+    background-color: grey;
+  }
+`;
