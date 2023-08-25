@@ -13,12 +13,59 @@ import {
 import List from "../components/List";
 import profilePic from "../images/profile-picture.png";
 
+const defaultLeftPanelItemDetails = {
+  imgSize: "10%",
+};
+
+const user = {
+  name: "Michał Izdebski",
+  imgUrl: { profilePic },
+  imgSize: "10%",
+};
+
+const leftPanelVisibleItems = [
+  {
+    title: "profile",
+    details: { name: user.name, imgUrl: user.imgUrl, imgSize: "10%" },
+    id: 1,
+  },
+  {
+    title: "friends",
+    details: { name: user.name, imgUrl: user.imgUrl, imgSize: "10%" },
+    id: 2,
+  },
+  // { title: "memories", details: { leftPanelItemDetails }, id: 3 },
+  // { title: "messenger", details: { leftPanelItemDetails }, id: 4 },
+  // { title: "saved", details: { leftPanelItemDetails }, id: 5 },
+  // { title: "groups", details: { leftPanelItemDetails }, id: 6 },
+];
+
+function renderLeftPanelItems() {
+  return leftPanelVisibleItems.map((item) => (
+    <li>
+      <LeftPanelLink to={"/" + item.title}>
+        <LeftPanelDiv>
+          <img
+            src={item.details.imgUrl.profilePic}
+            alt={"Photo of " + item.details.name}
+            style={{
+              width: item.details.imgSize,
+              padding: 0,
+              margin: 0,
+            }}
+          />
+          <p style={{ paddingLeft: 10 }}>{item.details.name}</p>
+        </LeftPanelDiv>
+      </LeftPanelLink>
+    </li>
+  ));
+}
+
 function Home(props) {
   const [isOpen, setIsOpen] = useState(false);
 
   function toggle() {
     setIsOpen((isOpen) => !isOpen);
-    console.log(isOpen);
   }
 
   function HiddenElement() {
@@ -39,11 +86,25 @@ function Home(props) {
       <HomePage>
         <LeftPanel>
           <Ul>
+            {renderLeftPanelItems()}
+            <li>
+              <Button onClick={toggle}>
+                <ProfilePic src={profilePic} alt="profile picture" />
+                Zobacz więcej
+              </Button>
+            </li>
+          </Ul>
+
+          {/* <Ul>
             <li>
               <LeftPanelLink to="/profile">
                 <LeftPanelDiv>
-                  <ProfilePic src={profilePic} alt="profile picture" />
-                  Michał Izdebski
+                  <img
+                    src={profilePic}
+                    alt={"Photo of " + leftPanelItemDetails.name}
+                    style={{ width: leftPanelItemDetails.imgSize }}
+                  />
+                  <p style={{ paddingLeft: 10 }}>{leftPanelItemDetails.name}</p>
                 </LeftPanelDiv>
               </LeftPanelLink>
             </li>
@@ -88,7 +149,7 @@ function Home(props) {
                 </LeftPanelDiv>
               </Button>
             </li>
-          </Ul>
+          </Ul> */}
         </LeftPanel>
         <MiddlePanel>
           <List input={props.input} />

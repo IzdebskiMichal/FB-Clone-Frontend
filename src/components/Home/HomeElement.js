@@ -31,7 +31,7 @@ export const RightPanel = styled.div`
 export const LeftPanelDiv = styled.div`
   display: flex;
   align-items: center;
-  padding: 10px 0px 5px 10px;
+  padding-left: 10px;
   margin-left: 10px;
   width: 70%;
   &:hover {
@@ -58,7 +58,7 @@ export const ProfilePic = styled.img`
 export const Button = styled.button`
   display: flex;
   align-items: center;
-  padding: 10px 0px 5px 10px;
+  padding: 5px 0px 5px 5px;
   margin-left: 10px;
   background: none;
   cursor: pointer;
