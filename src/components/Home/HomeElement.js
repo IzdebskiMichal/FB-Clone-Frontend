@@ -19,7 +19,7 @@ export const MiddlePanel = styled.div`
   width: 50%;
   background: green;
 `;
-
+//
 export const RightPanel = styled.div`
   float: right;
   padding-top: 10px;
