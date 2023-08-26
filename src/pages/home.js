@@ -1,65 +1,17 @@
 import React, { useState } from "react";
 import {
+  ArrowDownCircleIcon,
+  ArrowUpCircleIcon,
+  Button,
   HomePage,
   LeftPanel,
   MiddlePanel,
   RightPanel,
   Ul,
-  LeftPanelDiv,
-  LeftPanelLink,
-  ProfilePic,
-  Button,
+  P,
 } from "../components/Home/HomeElement";
 import List from "../components/List";
-import profilePic from "../images/profile-picture.png";
-
-const defaultLeftPanelItemDetails = {
-  imgSize: "10%",
-};
-
-const user = {
-  name: "Michał Izdebski",
-  imgUrl: { profilePic },
-  imgSize: "10%",
-};
-
-const leftPanelVisibleItems = [
-  {
-    title: "profile",
-    details: { name: user.name, imgUrl: user.imgUrl, imgSize: "10%" },
-    id: 1,
-  },
-  {
-    title: "friends",
-    details: { name: user.name, imgUrl: user.imgUrl, imgSize: "10%" },
-    id: 2,
-  },
-  // { title: "memories", details: { leftPanelItemDetails }, id: 3 },
-  // { title: "messenger", details: { leftPanelItemDetails }, id: 4 },
-  // { title: "saved", details: { leftPanelItemDetails }, id: 5 },
-  // { title: "groups", details: { leftPanelItemDetails }, id: 6 },
-];
-
-function renderLeftPanelItems() {
-  return leftPanelVisibleItems.map((item) => (
-    <li>
-      <LeftPanelLink to={"/" + item.title}>
-        <LeftPanelDiv>
-          <img
-            src={item.details.imgUrl.profilePic}
-            alt={"Photo of " + item.details.name}
-            style={{
-              width: item.details.imgSize,
-              padding: 0,
-              margin: 0,
-            }}
-          />
-          <p style={{ paddingLeft: 10 }}>{item.details.name}</p>
-        </LeftPanelDiv>
-      </LeftPanelLink>
-    </li>
-  ));
-}
+import renderLeftPanelItems from "../components/Home/homeData";
 
 function Home(props) {
   const [isOpen, setIsOpen] = useState(false);
@@ -67,89 +19,27 @@ function Home(props) {
   function toggle() {
     setIsOpen((isOpen) => !isOpen);
   }
-
-  function HiddenElement() {
-    return (
-      <li>
-        <LeftPanelLink to="/friends">
-          <LeftPanelDiv>
-            <ProfilePic src={profilePic} alt="profile picture" />
-            Hidden
-          </LeftPanelDiv>
-        </LeftPanelLink>
-      </li>
-    );
-  }
-
   return (
     <>
       <HomePage>
         <LeftPanel>
           <Ul>
-            {renderLeftPanelItems()}
+            {renderLeftPanelItems(isOpen)}
             <li>
               <Button onClick={toggle}>
-                <ProfilePic src={profilePic} alt="profile picture" />
-                Zobacz więcej
+                {isOpen ? (
+                  <>
+                    <ArrowUpCircleIcon /> <P>See less</P>
+                  </>
+                ) : (
+                  <>
+                    <ArrowDownCircleIcon /> <P>See more</P>
+                  </>
+                )}
               </Button>
             </li>
+            ;
           </Ul>
-
-          {/* <Ul>
-            <li>
-              <LeftPanelLink to="/profile">
-                <LeftPanelDiv>
-                  <img
-                    src={profilePic}
-                    alt={"Photo of " + leftPanelItemDetails.name}
-                    style={{ width: leftPanelItemDetails.imgSize }}
-                  />
-                  <p style={{ paddingLeft: 10 }}>{leftPanelItemDetails.name}</p>
-                </LeftPanelDiv>
-              </LeftPanelLink>
-            </li>
-            <li>
-              <LeftPanelLink to="/friends">
-                <LeftPanelDiv>
-                  <ProfilePic src={profilePic} alt="profile picture" />
-                  Friends
-                </LeftPanelDiv>
-              </LeftPanelLink>
-            </li>
-            <li>
-              <LeftPanelLink to="/friends">
-                <LeftPanelDiv>
-                  <ProfilePic src={profilePic} alt="profile picture" />
-                  Friends
-                </LeftPanelDiv>
-              </LeftPanelLink>
-            </li>
-            <li>
-              <LeftPanelLink to="/friends">
-                <LeftPanelDiv>
-                  <ProfilePic src={profilePic} alt="profile picture" />
-                  Friends
-                </LeftPanelDiv>
-              </LeftPanelLink>
-            </li>
-            <li>
-              <LeftPanelLink to="/friends">
-                <LeftPanelDiv>
-                  <ProfilePic src={profilePic} alt="profile picture" />
-                  Friends
-                </LeftPanelDiv>
-              </LeftPanelLink>
-            </li>
-            {isOpen && <HiddenElement />}
-            <li>
-              <Button onClick={toggle}>
-                <LeftPanelDiv>
-                  <ProfilePic src={profilePic} alt="profile picture" />
-                  Zobacz więcej
-                </LeftPanelDiv>
-              </Button>
-            </li>
-          </Ul> */}
         </LeftPanel>
         <MiddlePanel>
           <List input={props.input} />

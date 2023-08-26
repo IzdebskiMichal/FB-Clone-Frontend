@@ -1,5 +1,13 @@
 import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
+import { People } from "@styled-icons/bootstrap/People";
+import { Clock } from "@styled-icons/entypo/Clock";
+import { Groups } from "@styled-icons/material-outlined/Groups";
+import { Messenger } from "@styled-icons/boxicons-logos/Messenger";
+import { Tv } from "@styled-icons/boxicons-regular/Tv";
+import { ArrowUpCircle } from "@styled-icons/bootstrap/ArrowUpCircle";
+import { ArrowDownCircle } from "@styled-icons/bootstrap/ArrowDownCircle";
+import { Games } from "@styled-icons/fluentui-system-regular/Games";
 
 export const HomePage = styled.div`
   background-color: grey;
@@ -58,7 +66,7 @@ export const ProfilePic = styled.img`
 export const Button = styled.button`
   display: flex;
   align-items: center;
-  padding: 5px 0px 5px 5px;
+  padding: 5px 0px 5px 10px;
   margin-left: 10px;
   background: none;
   cursor: pointer;
@@ -68,4 +76,51 @@ export const Button = styled.button`
   &:hover {
     background-color: grey;
   }
+`;
+
+export const FriendsIcon = styled(People)`
+  width: 10%;
+  height: 100%;
+`;
+
+export const MemoriesIcon = styled(Clock)`
+  width: 10%;
+  height: 100%;
+`;
+
+export const GroupsIcon = styled(Groups)`
+  width: 10%;
+  height: 100%;
+`;
+
+export const MessengerIcon = styled(Messenger)`
+  width: 10%;
+  height: 100%;
+`;
+
+export const FilmIcon = styled(Tv)`
+  width: 10%;
+  height: 100%;
+`;
+
+export const GamesIcon = styled(Games)`
+  width: 10%;
+  height: 100%;
+`;
+
+export const ArrowUpCircleIcon = styled(ArrowUpCircle)`
+  width: 10%;
+  height: 100%;
+  color: #65676b;
+`;
+
+export const ArrowDownCircleIcon = styled(ArrowDownCircle)`
+  width: 10%;
+  height: 100%;
+  color: #65676b;
+`;
+
+export const P = styled.p`
+  color: white;
+  padding-left: 10px;
 `;
