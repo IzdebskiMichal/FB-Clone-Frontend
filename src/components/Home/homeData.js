@@ -36,7 +36,6 @@ const leftPanelVisibleItems = [
     title: friendsTitle,
     details: {
       name: capitalizeFirstLetter(friendsTitle),
-      imgUrl: undefined,
       icon: FriendsIcon,
     },
     id: 2,
@@ -45,7 +44,6 @@ const leftPanelVisibleItems = [
     title: memoriesTitle,
     details: {
       name: capitalizeFirstLetter(memoriesTitle),
-      imgUrl: undefined,
       icon: MemoriesIcon,
     },
     id: 3,
@@ -54,7 +52,6 @@ const leftPanelVisibleItems = [
     title: groupsTitle,
     details: {
       name: capitalizeFirstLetter(groupsTitle),
-      imgUrl: undefined,
       icon: GroupsIcon,
     },
     id: 4,
@@ -63,7 +60,6 @@ const leftPanelVisibleItems = [
     title: messengerTitle,
     details: {
       name: capitalizeFirstLetter(messengerTitle),
-      imgUrl: undefined,
       icon: MessengerIcon,
     },
     id: 5,
@@ -72,30 +68,36 @@ const leftPanelVisibleItems = [
     title: filmTitle,
     details: {
       name: capitalizeFirstLetter(filmTitle),
-      imgUrl: undefined,
       icon: FilmIcon,
     },
     id: 6,
   },
+];
+
+const leftSidePanelHiddenItems = [
   {
     title: "Play games",
     details: {
       name: "Games",
-      imgUrl: undefined,
       icon: GamesIcon,
     },
     id: 7,
   },
 ];
-//todo handle the logic to add items and make sure that all of them are displayed when button is clicked and hidden when clicked again.
+
 export default function renderLeftPanelItems(isOpen) {
-  return leftPanelVisibleItems.map((item) => {
+  let visibleItems = isOpen
+    ? leftPanelVisibleItems.concat(leftSidePanelHiddenItems)
+    : leftPanelVisibleItems;
+  console.log("Visible items:", visibleItems);
+  console.log("isOpen value:", isOpen);
+  return visibleItems.map((item) => {
     console.log(item.id);
     return (
       <li>
         <LeftPanelLink to={"/" + item.title}>
           <LeftPanelDiv>
-            {item.details.imgUrl === undefined ? (
+            {!item.details.imgUrl ? (
               <item.details.icon />
             ) : (
               <img
