@@ -8,6 +8,19 @@ import {
   MessengerIcon,
   FilmIcon,
   GamesIcon,
+  StayCurrentPortraitIcon,
+  PlantIcon,
+  MegaphoneFillIcon,
+  ShopIcon,
+  GraphUpIcon,
+  BadgeAdIcon,
+  PowerOutlineIcon,
+  FlagIcon,
+  PuzzleOutlineIcon,
+  CalendarPlusFillIcon,
+  CreditCardIcon,
+  BookmarkIcon,
+  HeartIcon,
 } from "../../components/Home/HomeElement.js";
 
 const user = {
@@ -21,6 +34,10 @@ const memoriesTitle = "memories";
 const groupsTitle = "groups";
 const messengerTitle = "messenger";
 const filmTitle = "film";
+const marketplaceTitle = "marketplace";
+const activitesTitle = "activites";
+const savedsTitle = "saved";
+const currentTitle = "current";
 
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
@@ -76,12 +93,116 @@ const leftPanelVisibleItems = [
 
 const leftSidePanelHiddenItems = [
   {
-    title: "Play games",
+    title: "games",
     details: {
-      name: "Games",
+      name: "Play games",
       icon: GamesIcon,
     },
     id: 7,
+  },
+  {
+    title: "ad",
+    details: {
+      name: "Ad centre",
+      icon: MegaphoneFillIcon,
+    },
+    id: 8,
+  },
+  {
+    title: "climate",
+    details: {
+      name: "Climate knowledge centre",
+      icon: PlantIcon,
+    },
+    id: 9,
+  },
+  {
+    title: marketplaceTitle,
+    details: {
+      name: capitalizeFirstLetter(marketplaceTitle),
+      icon: ShopIcon,
+    },
+    id: 10,
+  },
+  {
+    title: "admgr",
+    details: {
+      name: "Ad manager",
+      icon: GraphUpIcon,
+    },
+    id: 11,
+  },
+  {
+    title: "adactivity",
+    details: {
+      name: "Last ad activity",
+      icon: BadgeAdIcon,
+    },
+    id: 12,
+  },
+  {
+    title: "crisis",
+    details: {
+      name: "Reaction to crisis",
+      icon: PowerOutlineIcon,
+    },
+    id: 13,
+  },
+  {
+    title: "pages",
+    details: {
+      name: "Pages",
+      icon: FlagIcon,
+    },
+    id: 14,
+  },
+  {
+    title: "gamesvids",
+    details: {
+      name: "Videos of games",
+      icon: PuzzleOutlineIcon,
+    },
+    id: 15,
+  },
+  {
+    title: activitesTitle,
+    details: {
+      name: capitalizeFirstLetter(activitesTitle),
+      icon: CalendarPlusFillIcon,
+    },
+    id: 16,
+  },
+  {
+    title: "orders",
+    details: {
+      name: "Orders and payments",
+      icon: CreditCardIcon,
+    },
+    id: 17,
+  },
+  {
+    title: savedsTitle,
+    details: {
+      name: capitalizeFirstLetter(savedsTitle),
+      icon: BookmarkIcon,
+    },
+    id: 18,
+  },
+  {
+    title: "charity",
+    details: {
+      name: "Donating to charity",
+      icon: HeartIcon,
+    },
+    id: 19,
+  },
+  {
+    title: currentTitle,
+    details: {
+      name: capitalizeFirstLetter(currentTitle),
+      icon: StayCurrentPortraitIcon,
+    },
+    id: 20,
   },
 ];
 

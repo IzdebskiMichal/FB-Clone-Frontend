@@ -8,6 +8,19 @@ import { Tv } from "@styled-icons/boxicons-regular/Tv";
 import { ArrowUpCircle } from "@styled-icons/bootstrap/ArrowUpCircle";
 import { ArrowDownCircle } from "@styled-icons/bootstrap/ArrowDownCircle";
 import { Games } from "@styled-icons/fluentui-system-regular/Games";
+import { StayCurrentPortrait } from "@styled-icons/material/StayCurrentPortrait";
+import { Plant } from "@styled-icons/remix-line/Plant";
+import { MegaphoneFill } from "@styled-icons/bootstrap/MegaphoneFill";
+import { Shop } from "@styled-icons/bootstrap/Shop";
+import { GraphUp } from "@styled-icons/bootstrap/GraphUp";
+import { BadgeAd } from "@styled-icons/bootstrap/BadgeAd";
+import { PowerOutline } from "@styled-icons/typicons/PowerOutline";
+import { Flag } from "@styled-icons/bootstrap/Flag";
+import { PuzzleOutline } from "@styled-icons/typicons/PuzzleOutline";
+import { CalendarPlusFill } from "@styled-icons/bootstrap/CalendarPlusFill";
+import { CreditCard } from "@styled-icons/boxicons-regular/CreditCard";
+import { Bookmark } from "@styled-icons/bootstrap/Bookmark";
+import { Heart } from "@styled-icons/bootstrap/Heart";
 
 export const HomePage = styled.div`
   background-color: grey;
@@ -104,6 +117,71 @@ export const FilmIcon = styled(Tv)`
 `;
 
 export const GamesIcon = styled(Games)`
+  width: 10%;
+  height: 100%;
+`;
+
+export const ShopIcon = styled(Shop)`
+  width: 10%;
+  height: 100%;
+`;
+
+export const GraphUpIcon = styled(GraphUp)`
+  width: 10%;
+  height: 100%;
+`;
+
+export const BadgeAdIcon = styled(BadgeAd)`
+  width: 10%;
+  height: 100%;
+`;
+
+export const PowerOutlineIcon = styled(PowerOutline)`
+  width: 10%;
+  height: 100%;
+`;
+
+export const FlagIcon = styled(Flag)`
+  width: 10%;
+  height: 100%;
+`;
+
+export const PuzzleOutlineIcon = styled(PuzzleOutline)`
+  width: 10%;
+  height: 100%;
+`;
+
+export const CalendarPlusFillIcon = styled(CalendarPlusFill)`
+  width: 10%;
+  height: 100%;
+`;
+
+export const CreditCardIcon = styled(CreditCard)`
+  width: 10%;
+  height: 100%;
+`;
+
+export const BookmarkIcon = styled(Bookmark)`
+  width: 10%;
+  height: 100%;
+`;
+
+export const HeartIcon = styled(Heart)`
+  width: 10%;
+  height: 100%;
+`;
+
+export const StayCurrentPortraitIcon = styled(StayCurrentPortrait)`
+  width: 10%;
+  height: 100%;
+`;
+
+export const PlantIcon = styled(Plant)`
+  width: 10%;
+  height: 100%;
+`;
+
+export const MegaphoneFillIcon = styled(MegaphoneFill)`
   width: 10%;
   height: 100%;
 `;
