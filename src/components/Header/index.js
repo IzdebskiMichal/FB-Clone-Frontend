@@ -12,7 +12,7 @@ import {
   GamesIcon,
 } from "./NavElement";
 import logo from "../../images/fb-logo.png";
-import SearchBar from "../../pages/searchBar";
+import SearchBar from "./searchBar";
 
 const Header = (props) => {
   return (

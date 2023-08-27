@@ -1,6 +1,6 @@
 import React from "react";
 import { TextField } from "@mui/material";
-import { SearchDiv } from "../components/Header/NavElement";
+import { SearchDiv } from "./NavElement";
 
 const SearchBar = (props) => {
   return (

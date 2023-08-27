@@ -62,6 +62,8 @@ export const LeftPanelDiv = styled.div`
 
 export const Ul = styled.ul`
   list-style-type: none;
+  height: 90vh;
+  overflow: auto;
   padding: 0px;
 `;
 
