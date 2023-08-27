@@ -11,6 +11,8 @@ export const PrimaryNav = styled.nav`
   display: flex;
   background: #1c1e21;
   justify-content: space-between;
+  position: sticky;
+  top: 0;
 `;
 
 export const MenuLink = styled(Link)`
