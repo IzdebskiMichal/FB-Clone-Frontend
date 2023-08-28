@@ -54,7 +54,6 @@ export const LeftPanelDiv = styled.div`
   align-items: center;
   padding-left: 10px;
   margin-left: 10px;
-  width: 70%;
   &:hover {
     background-color: grey;
   }
@@ -63,7 +62,6 @@ export const LeftPanelDiv = styled.div`
 export const Ul = styled.ul`
   list-style-type: none;
   height: 90vh;
-  overflow: auto;
   padding: 0px;
 `;
 
@@ -85,7 +83,6 @@ export const Button = styled.button`
   margin-left: 10px;
   background: none;
   cursor: pointer;
-  width: 70%;
   background-color: inherit;
   border: none;
   &:hover {

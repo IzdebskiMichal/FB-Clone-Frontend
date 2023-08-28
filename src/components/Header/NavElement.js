@@ -21,7 +21,7 @@ export const MenuLink = styled(Link)`
   cursor: pointer;
   align-items: center;
   text-decoration: none;
-  padding: 0 1.2rem;
+  padding: 0 3.3rem;
   height: 100%;
   &.active {
     color: #4599ff;
@@ -40,6 +40,7 @@ export const MenuLeft = styled.div`
 
 export const Menu = styled.div`
   display: flex;
+  padding-right: 100px;
   justify-content: center;
   self-align: center;
 `;

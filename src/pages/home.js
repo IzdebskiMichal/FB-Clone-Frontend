@@ -23,23 +23,25 @@ function Home(props) {
     <>
       <HomePage>
         <LeftPanel>
-          <Ul>
-            {renderLeftPanelItems(isOpen)}
-            <li>
-              <Button onClick={toggle}>
-                {isOpen ? (
-                  <>
-                    <ArrowUpCircleIcon /> <P>See less</P>
-                  </>
-                ) : (
-                  <>
-                    <ArrowDownCircleIcon /> <P>See more</P>
-                  </>
-                )}
-              </Button>
-            </li>
-            ;
-          </Ul>
+          <div style={{ width: "70%", overflow: "auto" }}>
+            <Ul>
+              {renderLeftPanelItems(isOpen)}
+              <li>
+                <Button onClick={toggle}>
+                  {isOpen ? (
+                    <>
+                      <ArrowUpCircleIcon /> <P>See less</P>
+                    </>
+                  ) : (
+                    <>
+                      <ArrowDownCircleIcon /> <P>See more</P>
+                    </>
+                  )}
+                </Button>
+              </li>
+              ;
+            </Ul>
+          </div>
         </LeftPanel>
         <MiddlePanel>
           <List input={props.input} />
