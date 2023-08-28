@@ -13,6 +13,7 @@ export const PrimaryNav = styled.nav`
   justify-content: space-between;
   position: sticky;
   top: 0;
+  z-index: 100;
 `;
 
 export const MenuLink = styled(Link)`

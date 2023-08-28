@@ -23,7 +23,7 @@ import { Bookmark } from "@styled-icons/bootstrap/Bookmark";
 import { Heart } from "@styled-icons/bootstrap/Heart";
 
 export const HomePage = styled.div`
-  background-color: grey;
+  background-color: #18191a;
   overflow: hidden;
 `;
 
@@ -38,9 +38,10 @@ export const LeftPanel = styled.div`
 export const MiddlePanel = styled.div`
   float: left;
   width: 50%;
+  height: 200vh;
   background: green;
 `;
-//
+
 export const RightPanel = styled.div`
   float: right;
   padding-top: 10px;
