@@ -210,10 +210,8 @@ export default function renderLeftPanelItems(isOpen) {
   let visibleItems = isOpen
     ? leftPanelVisibleItems.concat(leftSidePanelHiddenItems)
     : leftPanelVisibleItems;
-  console.log("Visible items:", visibleItems);
-  console.log("isOpen value:", isOpen);
+
   return visibleItems.map((item) => {
-    console.log(item.id);
     return (
       <li>
         <LeftPanelLink to={"/" + item.title}>
