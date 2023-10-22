@@ -3,7 +3,11 @@ import "../components/TicTacToe/styles.css";
 import TicTacToe from "../components/TicTacToe/TicTacToe";
 
 function Games() {
-  return <TicTacToe />;
+  return (
+    <div style={{ margin: "20px" }}>
+      <TicTacToe />
+    </div>
+  );
 }
 
 export default Games;
