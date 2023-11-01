@@ -9,7 +9,7 @@ import {
 } from "./HomeElement";
 import renderLeftPanelItems from "./homeData";
 
-export default function LeftPanelContent(isOpen, toggle) {
+export default function LeftPanelContent({ isOpen, toggle }) {
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const handleScroll = () => {
@@ -45,7 +45,6 @@ export default function LeftPanelContent(isOpen, toggle) {
               )}
             </Button>
           </li>
-          ;
         </Ul>
       </div>
     </LeftPanel>

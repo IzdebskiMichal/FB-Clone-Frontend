@@ -14,13 +14,13 @@ function Home(props) {
   const [isOpen, setIsOpen] = useState(false);
 
   function toggle() {
-    setIsOpen((isOpen) => !isOpen);
+    setIsOpen(!isOpen);
   }
 
   return (
     <>
       <HomePage>
-        <LeftPanelContent isOpen={isOpen} toggle={toggle}></LeftPanelContent>
+        <LeftPanelContent isOpen={isOpen} toggle={toggle} />
         <MiddlePanel>
           <Slide slidesToScroll={2} slidesToShow={2}>
             <div style={{ height: "30vh", width: "100%" }}>
