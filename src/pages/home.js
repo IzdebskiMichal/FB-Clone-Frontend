@@ -1,86 +1,31 @@
 import React, { useEffect, useState } from "react";
 import {
   HomePage,
+  LeftPanel,
   MiddlePanel,
   RightPanel,
 } from "../components/Home/HomeElement";
 import List from "../components/List";
-import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
-import Bookworm from "../images/bookworm.jpg";
+
 import LeftPanelContent from "../components/Home/leftPanelContent";
+import "../styles.css";
 
 function Home(props) {
   const [isOpen, setIsOpen] = useState(false);
 
   function toggle() {
-    setIsOpen((isOpen) => !isOpen);
+    setIsOpen(!isOpen);
   }
 
   return (
     <>
       <HomePage>
-        <LeftPanelContent isOpen={isOpen} toggle={toggle}></LeftPanelContent>
+        <LeftPanel>
+          <LeftPanelContent isOpen={isOpen} toggle={toggle} />
+        </LeftPanel>
         <MiddlePanel>
-          <Slide slidesToScroll={2} slidesToShow={2}>
-            <div style={{ height: "30vh", width: "100%" }}>
-              <img
-                src={Bookworm}
-                alt="bookworm"
-                style={{ objectFit: "contain", width: "100%", height: "100%" }}
-              />
-            </div>
-            <div style={{ height: "30vh", width: "100%" }}>
-              <img
-                src={Bookworm}
-                alt="bookworm"
-                style={{ objectFit: "contain", width: "100%", height: "100%" }}
-              />
-            </div>
-            <div style={{ height: "30vh", width: "100%" }}>
-              <img
-                src={Bookworm}
-                alt="bookworm"
-                style={{ objectFit: "contain", width: "100%", height: "100%" }}
-              />
-            </div>
-            <div style={{ height: "30vh", width: "100%" }}>
-              <img
-                src={Bookworm}
-                alt="bookworm"
-                style={{ objectFit: "contain", width: "100%", height: "100%" }}
-              />
-            </div>
-            <div style={{ height: "30vh", width: "100%" }}>
-              <img
-                src={Bookworm}
-                alt="bookworm"
-                style={{ objectFit: "contain", width: "100%", height: "100%" }}
-              />
-            </div>
-            <div style={{ height: "30vh", width: "100%" }}>
-              <img
-                src={Bookworm}
-                alt="bookworm"
-                style={{ objectFit: "contain", width: "100%", height: "100%" }}
-              />
-            </div>
-            <div style={{ height: "30vh", width: "100%" }}>
-              <img
-                src={Bookworm}
-                alt="bookworm"
-                style={{ objectFit: "contain", width: "100%", height: "100%" }}
-              />
-            </div>
-            <div style={{ height: "30vh", width: "100%" }}>
-              <img
-                src={Bookworm}
-                alt="bookworm"
-                style={{ objectFit: "contain", width: "100%", height: "100%" }}
-              />
-            </div>
-          </Slide>
-
+          <FilterableProductTable products={PRODUCTS} />
           <List input={props.input} />
         </MiddlePanel>
         <RightPanel>right</RightPanel>
@@ -88,5 +33,129 @@ function Home(props) {
     </>
   );
 }
+
+function ProductCategoryRow({ category }) {
+  return (
+    <tr>
+      <th colSpan="2">{category}</th>
+    </tr>
+  );
+}
+
+function ProductRow({ product }) {
+  const name = product.stocked ? (
+    product.name
+  ) : (
+    <span style={{ color: "red" }}>{product.name}</span>
+  );
+
+  return (
+    <tr>
+      <td>{name}</td>
+      <td>{product.price}</td>
+    </tr>
+  );
+}
+
+function ProductTable({ products, filterText, inStockOnly }) {
+  const rows = [];
+  let lastCategory = null;
+
+  useEffect(() => {
+    // Add all products to the global scope
+    window.allProducts = products;
+
+    // Remove all products from the global scope when the component unmounts
+    return () => {
+      window.allProducts = undefined;
+    };
+  }, [products]);
+
+  products.forEach((product) => {
+    if (product.name.toLowerCase().indexOf(filterText.toLowerCase()) === -1) {
+      return;
+    }
+    if (inStockOnly && !product.stocked) {
+      return;
+    }
+    if (product.category !== lastCategory) {
+      rows.push(
+        <ProductCategoryRow
+          category={product.category}
+          key={product.category}
+        />
+      );
+    }
+    rows.push(<ProductRow product={product} key={product.name} />);
+    lastCategory = product.category;
+  });
+
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>{rows}</tbody>
+    </table>
+  );
+}
+
+function SearchBar({
+  filterText,
+  inStockOnly,
+  onFilterTextChange,
+  onInStockOnlyChange,
+}) {
+  return (
+    <form>
+      <input
+        type="text"
+        value={filterText}
+        placeholder="Search..."
+        onChange={(e) => onFilterTextChange(e.target.value)}
+      />
+      <label>
+        <input
+          type="checkbox"
+          value={inStockOnly}
+          onChange={(e) => onInStockOnlyChange(e.target.checked)}
+        />
+        Only show products in stock
+      </label>
+    </form>
+  );
+}
+
+function FilterableProductTable({ products }) {
+  const [filterText, setFilterText] = useState("");
+  const [inStockOnly, setInStockOnly] = useState(false);
+  return (
+    <div>
+      <SearchBar
+        filterText={filterText}
+        inStockOnly={inStockOnly}
+        onFilterTextChange={setFilterText}
+        onInStockOnlyChange={setInStockOnly}
+      />
+      <ProductTable
+        products={products}
+        filterText={filterText}
+        inStockOnly={inStockOnly}
+      />
+    </div>
+  );
+}
+
+const PRODUCTS = [
+  { category: "Fruits", price: "$1", stocked: true, name: "Apple" },
+  { category: "Fruits", price: "$1", stocked: true, name: "Dragonfruit" },
+  { category: "Fruits", price: "$2", stocked: false, name: "Passionfruit" },
+  { category: "Vegetables", price: "$2", stocked: true, name: "Spinach" },
+  { category: "Vegetables", price: "$4", stocked: false, name: "Pumpkin" },
+  { category: "Vegetables", price: "$1", stocked: true, name: "Peas" },
+];
 
 export default Home;

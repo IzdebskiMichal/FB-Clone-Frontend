@@ -24,30 +24,38 @@ import { Heart } from "@styled-icons/bootstrap/Heart";
 
 export const HomePage = styled.div`
   background-color: #18191a;
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  z-index: 0;
   overflow: hidden;
 `;
 
 export const LeftPanel = styled.div`
-  float: left;
   padding-top: 10px;
   width: 25%;
   background: #18191a;
   height: 100vh;
+  position: fixed;
+  top: 1;
+  left: 0;
 `;
 
 export const MiddlePanel = styled.div`
-  float: left;
   width: 50%;
   height: 200vh;
-  background: green;
+  background: white;
+  margin-left: 25%;
 `;
 
 export const RightPanel = styled.div`
-  float: right;
   padding-top: 10px;
   width: 25%;
   background: blue;
   overflow: auto;
+  position: fixed;
+  top: 1;
+  right: 0;
 `;
 
 export const LeftPanelDiv = styled.div`
@@ -62,7 +70,7 @@ export const LeftPanelDiv = styled.div`
 
 export const Ul = styled.ul`
   list-style-type: none;
-  height: 90vh;
+  height: 70vh;
   padding: 0px;
 `;
 
